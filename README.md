@@ -1,4 +1,5 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/7aa0843e159e2a63aaa9/maintainability)](https://codeclimate.com/github/HKreoin/itprom/maintainability)
+![Maven workflow](https://github.com/HKreoin/itprom/actions/workflows/maven-publish.yml/badge.svg)
 
 ## Test application for test case IT PROM
 
