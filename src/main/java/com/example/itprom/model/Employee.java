@@ -20,7 +20,7 @@ import lombok.ToString;
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString(includeFieldNames = true, onlyExplicitlyIncluded = true)
-public class Employee {
+public class Employee implements BaseEntity {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     @EqualsAndHashCode.Include

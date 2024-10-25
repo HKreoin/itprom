@@ -25,7 +25,7 @@ import jakarta.validation.constraints.Size;
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString(includeFieldNames = true, onlyExplicitlyIncluded = true)
-public class Profession {
+public class Profession implements BaseEntity {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     @EqualsAndHashCode.Include
