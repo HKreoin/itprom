@@ -5,8 +5,6 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.scheduling.config.Task;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -36,7 +34,6 @@ public class Profession implements BaseEntity {
     @ToString.Include
     private String name;
 
-    @Size(min = 1)
     @ToString.Include
     private String description;
 

@@ -41,7 +41,6 @@ public class Employee implements BaseEntity {
     @ToString.Include
     private Department department;
 
-    @Size(min = 1)
     @ToString.Include
     private String description;
 

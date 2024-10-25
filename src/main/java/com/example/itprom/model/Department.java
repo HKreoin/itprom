@@ -36,7 +36,6 @@ public class Department implements BaseEntity {
     @ToString.Include
     private String name;
 
-    @Size(min = 1)
     @ToString.Include
     private String description;
 
