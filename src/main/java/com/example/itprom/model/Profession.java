@@ -11,6 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,6 +32,7 @@ public class Profession implements BaseEntity {
     private Long id;
 
     @Size(min = 1)
+    @Column(unique = true)
     @ToString.Include
     private String name;
 

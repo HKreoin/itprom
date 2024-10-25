@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -33,6 +34,7 @@ public class Department implements BaseEntity {
     private Long id;
 
     @Size(min = 1)
+    @Column(unique = true)
     @ToString.Include
     private String name;
 

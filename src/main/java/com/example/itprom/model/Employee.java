@@ -2,6 +2,7 @@ package com.example.itprom.model;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -28,6 +29,7 @@ public class Employee implements BaseEntity {
     private Long id;
 
     @Size(min = 1)
+    @Column(unique = true)
     @ToString.Include
     private String fullName;
 
