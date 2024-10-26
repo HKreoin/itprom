@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.NotBlank;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,8 +28,8 @@ public class Employee implements BaseEntity {
     @ToString.Include
     private Long id;
 
-    @Size(min = 1)
-    @Column(unique = true, name = "full_name")
+    @NotBlank
+    @Column(unique = true)
     @ToString.Include
     @EqualsAndHashCode.Include
     private String fullName;

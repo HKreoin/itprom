@@ -14,7 +14,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.NotBlank;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -33,7 +33,7 @@ public class Department implements BaseEntity {
     @ToString.Include
     private Long id;
 
-    @Size(min = 1)
+    @NotBlank
     @Column(unique = true)
     @ToString.Include
     @EqualsAndHashCode.Include

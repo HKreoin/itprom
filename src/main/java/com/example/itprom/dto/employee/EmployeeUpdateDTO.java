@@ -5,7 +5,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Column;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,7 +13,7 @@ import lombok.Setter;
 @Setter
 public class EmployeeUpdateDTO {
 
-    @Size(min = 1)
+    @NotBlank
     @Column(unique = true)
     @JsonProperty("full_name")
     private JsonNullable<String> fullName;

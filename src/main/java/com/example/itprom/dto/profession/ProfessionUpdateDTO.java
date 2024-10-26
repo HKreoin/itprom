@@ -3,7 +3,7 @@ package com.example.itprom.dto.profession;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import jakarta.persistence.Column;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +11,7 @@ import lombok.Setter;
 @Setter
 public class ProfessionUpdateDTO {
 
-    @Size(min = 1)
+    @NotBlank
     @Column(unique = true)
     private JsonNullable<String> name;
 

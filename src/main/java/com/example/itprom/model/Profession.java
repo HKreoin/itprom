@@ -16,7 +16,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "professions")
@@ -31,7 +31,7 @@ public class Profession implements BaseEntity {
     @ToString.Include
     private Long id;
 
-    @Size(min = 1)
+    @NotBlank
     @Column(unique = true)
     @ToString.Include
     @EqualsAndHashCode.Include
