@@ -26,7 +26,7 @@ public abstract class EmployeeMapper {
     @Mapping(target = "departmentId", source = "department.id")
     @Mapping(target = "professionId", source = "profession.id")
     public abstract EmployeeDTO map(Employee model);
-    
+
     @Mapping(target = "department", source = "departmentId")
     @Mapping(target = "profession", source = "professionId")
     public abstract Employee map(EmployeeDTO data);
