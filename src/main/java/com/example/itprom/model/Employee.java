@@ -29,8 +29,9 @@ public class Employee implements BaseEntity {
     private Long id;
 
     @Size(min = 1)
-    @Column(unique = true)
+    @Column(unique = true, name = "full_name")
     @ToString.Include
+    @EqualsAndHashCode.Include
     private String fullName;
 
     @ManyToOne

@@ -2,8 +2,8 @@ package com.example.itprom.model;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -36,13 +36,14 @@ public class Department implements BaseEntity {
     @Size(min = 1)
     @Column(unique = true)
     @ToString.Include
+    @EqualsAndHashCode.Include
     private String name;
 
     @ToString.Include
     private String description;
 
     @OneToMany(mappedBy = "parentDepartment", cascade = CascadeType.MERGE, orphanRemoval = true)
-    private List<Department> departments = new ArrayList<>();
+    private Set<Department> departments = new HashSet<>();
 
     @ManyToOne
     @JoinColumn(name = "parent_department_id")
@@ -50,5 +51,5 @@ public class Department implements BaseEntity {
     private Department parentDepartment;
 
     @OneToMany(mappedBy = "department", cascade = CascadeType.MERGE, orphanRemoval = true)
-    private List<Employee> employees = new ArrayList<>();
+    private Set<Employee> employees = new HashSet<>();
 }
