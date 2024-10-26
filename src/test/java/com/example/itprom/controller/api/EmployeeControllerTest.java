@@ -28,8 +28,8 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import com.example.itprom.dto.employee.EmployeeDTO;
+import com.example.itprom.exception.ResourceNotFoundException;
 import com.example.itprom.mapper.EmployeeMapper;
 import com.example.itprom.model.Employee;
 import com.example.itprom.repository.EmployeeRepository;
@@ -99,9 +99,12 @@ public class EmployeeControllerTest {
 
     @Test
     public void testCreate() throws Exception {
-        var data = Instancio.of(modelGenerator
-                        .getEmployeeModel())
-                        .create();
+
+        var model = Instancio.of(modelGenerator.getEmployeeModel())
+        .create();
+        var data = employeeMapper.map(model);
+        data.setDepartmentId(1L);
+        data.setProfessionId(1L);
 
         var request = post("/api/employees")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -110,7 +113,10 @@ public class EmployeeControllerTest {
         mockMvc.perform(request)
                 .andExpect(status().isCreated());
 
-        var employee =  employeeRepository.findByFullName(data.getFullName()).get();
+        var employee =  employeeRepository
+                .findByFullName(data.getFullName())
+                .orElseThrow(() -> new ResourceNotFoundException(
+                "Employee with full name: " + data.getFullName() + "not found"));
 
         assertNotNull(employee);
         assertEquals(employee.getFullName(), data.getFullName());
