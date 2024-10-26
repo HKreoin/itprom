@@ -35,7 +35,8 @@ public class ProfessionsController {
 
     @GetMapping("")
     @ResponseStatus(HttpStatus.OK)
-    @Operation(summary = "Получить список профессий", responses = {@ApiResponse(description = "Успешное получение списка профессий")})
+    @Operation(summary = "Получить список профессий",
+        responses = {@ApiResponse(description = "Успешное получение списка профессий")})
     ResponseEntity<List<ProfessionDTO>> index() {
         var dtos = service.findAll();
         return ResponseEntity.ok()
@@ -45,28 +46,32 @@ public class ProfessionsController {
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    @Operation(summary = "Получить профессию по ID", responses = {@ApiResponse(description = "Успешное получение профессии")})
+    @Operation(summary = "Получить профессию по ID",
+        responses = {@ApiResponse(description = "Успешное получение профессии")})
     ProfessionDTO show(@PathVariable Long id) {
         return service.findById(id);
     }
 
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
-    @Operation(summary = "Создать профессию", responses = {@ApiResponse(description = "Успешное создание профессии")})
+    @Operation(summary = "Создать профессию",
+        responses = {@ApiResponse(description = "Успешное создание профессии")})
     ProfessionDTO create(@Valid @RequestBody ProfessionCreateDTO data) {
         return service.create(data);
     }
 
     @PutMapping("{id}")
     @ResponseStatus(HttpStatus.OK)
-    @Operation(summary = "Обновить профессию", responses = {@ApiResponse(description = "Успешное обновление профессии")})
+    @Operation(summary = "Обновить профессию",
+        responses = {@ApiResponse(description = "Успешное обновление профессии")})
     ProfessionDTO update(@PathVariable Long id, @Valid @RequestBody ProfessionUpdateDTO data) {
         return service.update(id, data);
     }
 
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @Operation(summary = "Удалить профессию", responses = {@ApiResponse(description = "Успешное удаление профессии")})
+    @Operation(summary = "Удалить профессию",
+        responses = {@ApiResponse(description = "Успешное удаление профессии")})
     void destroy(@PathVariable Long id) {
         service.delete(id);
     }

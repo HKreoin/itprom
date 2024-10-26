@@ -35,7 +35,8 @@ public class DepartmentsController {
 
     @GetMapping("")
     @ResponseStatus(HttpStatus.OK)
-    @Operation(summary = "Получить список отделов", responses = {@ApiResponse(description = "Успешное получение списка отделов")})
+    @Operation(summary = "Получить список отделов",
+        responses = {@ApiResponse(description = "Успешное получение списка отделов")})
     ResponseEntity<List<DepartmentDTO>> index() {
         var dtos = service.findAll();
         return ResponseEntity.ok()
@@ -45,28 +46,32 @@ public class DepartmentsController {
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    @Operation(summary = "Получить отдел по ID", responses = {@ApiResponse(description = "Успешное получение отдела")})
+    @Operation(summary = "Получить отдел по ID",
+        responses = {@ApiResponse(description = "Успешное получение отдела")})
     DepartmentDTO show(@PathVariable Long id) {
         return service.findById(id);
     }
 
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
-    @Operation(summary = "Создать отдел", responses = {@ApiResponse(description = "Успешное создание отдела")})
+    @Operation(summary = "Создать отдел",
+        responses = {@ApiResponse(description = "Успешное создание отдела")})
     DepartmentDTO create(@Valid @RequestBody DepartmentCreateDTO data) {
         return service.create(data);
     }
 
     @PutMapping("{id}")
     @ResponseStatus(HttpStatus.OK)
-    @Operation(summary = "Обновить отдел", responses = {@ApiResponse(description = "Успешное обновление отдела")})
+    @Operation(summary = "Обновить отдел",
+        responses = {@ApiResponse(description = "Успешное обновление отдела")})
     DepartmentDTO update(@PathVariable Long id, @Valid @RequestBody DepartmentUpdateDTO data) {
         return service.update(id, data);
     }
 
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @Operation(summary = "Удалить отдел", responses = {@ApiResponse(description = "Успешное удаление отдела")})
+    @Operation(summary = "Удалить отдел",
+        responses = {@ApiResponse(description = "Успешное удаление отдела")})
     void destroy(@PathVariable Long id) {
         service.delete(id);
     }
