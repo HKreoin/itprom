@@ -48,7 +48,7 @@ public class ModelGenerator {
 
         professionModel = Instancio.of(Profession.class)
                 .ignore(Select.field(Profession::getId))
-                .supply(Select.field(Profession::getName), () -> faker.company().profession())
+                .supply(Select.field(Profession::getName), () -> faker.lorem().word())
                 .supply(Select.field(Profession::getDescription), () -> faker.lorem().sentence())
                 .ignore(Select.field(Profession::getEmployees))
                 .toModel();
