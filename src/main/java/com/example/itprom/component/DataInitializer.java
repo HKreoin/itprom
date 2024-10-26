@@ -33,12 +33,18 @@ public class DataInitializer implements ApplicationRunner {
 
         var profession1 = new ProfessionCreateDTO();
         profession1.setName("Java developer");
-        profession1.setDescription("A Java Developer is a programmer who designs, develops, and manages Java-based applications and software.");
+        profession1.setDescription(
+            "A Java Developer is a programmer who designs, develops,"
+            + "and manages Java-based applications and software."
+        );
         professionService.create(profession1);
 
         var profession2 = new ProfessionCreateDTO();
         profession2.setName("QA tester");
-        profession2.setDescription("QA testers assess software and development processes to meet client requirements and organisational standards.");
+        profession2.setDescription(
+            "QA testers assess software and development processes to "
+            + "meet client requirements and organisational standards."
+        );
         professionService.create(profession2);
 
         var department1 = new DepartmentCreateDTO();

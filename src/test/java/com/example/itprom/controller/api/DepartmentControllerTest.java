@@ -130,9 +130,9 @@ public class DepartmentControllerTest {
         mockMvc.perform(request)
                 .andExpect(status().isOk());
 
-        var Department = departmentRepository.findById(id).get();
+        var department = departmentRepository.findById(id).get();
 
-        assertThat(Department.getName()).isEqualTo("Test department name");
+        assertThat(department.getName()).isEqualTo("Test department name");
     }
 
     @Test

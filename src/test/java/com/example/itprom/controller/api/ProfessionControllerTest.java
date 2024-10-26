@@ -130,9 +130,9 @@ public class ProfessionControllerTest {
         mockMvc.perform(request)
                 .andExpect(status().isOk());
 
-        var Profession = professionRepository.findById(id).get();
+        var profession = professionRepository.findById(id).get();
 
-        assertThat(Profession.getName()).isEqualTo("Test profession name");
+        assertThat(profession.getName()).isEqualTo("Test profession name");
     }
 
     @Test

@@ -130,9 +130,9 @@ public class EmployeeControllerTest {
         mockMvc.perform(request)
                 .andExpect(status().isOk());
 
-        var Employee = employeeRepository.findById(id).get();
+        var employee = employeeRepository.findById(id).get();
 
-        assertThat(Employee.getFullName()).isEqualTo("Test employee name");
+        assertThat(employee.getFullName()).isEqualTo("Test employee name");
     }
 
     @Test

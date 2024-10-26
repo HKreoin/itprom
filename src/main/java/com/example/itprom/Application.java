@@ -9,11 +9,11 @@ import net.datafaker.Faker;
 @SpringBootApplication
 public class Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
 
-	@Bean
+    @Bean
     public Faker getFaker() {
         return new Faker();
     }
