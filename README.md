@@ -1,6 +1,5 @@
 [![Maven workflow](https://github.com/HKreoin/itprom/actions/workflows/maven-publish.yml/badge.svg)](https://github.com/HKreoin/itprom/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/7aa0843e159e2a63aaa9/maintainability)](https://codeclimate.com/github/HKreoin/itprom/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/7aa0843e159e2a63aaa9/test_coverage)](https://codeclimate.com/github/HKreoin/itprom/test_coverage)
 
 ## Test application for test case IT PROM
 
