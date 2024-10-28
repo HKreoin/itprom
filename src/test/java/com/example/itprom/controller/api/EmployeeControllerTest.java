@@ -28,6 +28,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.example.itprom.dto.employee.EmployeeCreateDTO;
 import com.example.itprom.dto.employee.EmployeeDTO;
 import com.example.itprom.exception.ResourceNotFoundException;
 import com.example.itprom.mapper.EmployeeMapper;
@@ -102,7 +103,9 @@ public class EmployeeControllerTest {
 
         var model = Instancio.of(modelGenerator.getEmployeeModel())
         .create();
-        var data = employeeMapper.map(model);
+        var data = new EmployeeCreateDTO();
+        data.setFullName(model.getFullName());
+        data.setDescription(model.getDescription());
         data.setDepartmentId(1L);
         data.setProfessionId(1L);
 
