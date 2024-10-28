@@ -1,5 +1,7 @@
 package com.example.itprom.dto.employee;
 
+import com.example.itprom.dto.department.DepartmentDTO;
+import com.example.itprom.dto.profession.ProfessionDTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Getter;
@@ -15,10 +17,10 @@ public class EmployeeDTO {
 
     private String description;
 
-    @JsonProperty("department_id")
-    private Long departmentId;
+    @JsonProperty("department")
+    private DepartmentDTO department;
 
-    @JsonProperty("profession_id")
-    private Long professionId;
+    @JsonProperty("profession")
+    private ProfessionDTO profession;
 }
 

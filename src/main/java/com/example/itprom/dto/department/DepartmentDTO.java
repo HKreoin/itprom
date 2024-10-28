@@ -14,7 +14,7 @@ public class DepartmentDTO {
 
     private String description;
 
-    @JsonProperty("parent_department_id")
-    private Long parentDepartmentId;
+    @JsonProperty("parent_department")
+    private DepartmentDTO parentDepartment;
 }
 
