@@ -10,7 +10,7 @@ run:
 	java -jar ./target/itprom-0.0.1-SNAPSHOT.jar
 
 build-run:
-	build run
+	make build run
 
 lint:
 	mvn checkstyle:checkstyle
