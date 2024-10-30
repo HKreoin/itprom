@@ -42,7 +42,9 @@ public class Department implements BaseEntity {
     @ToString.Include
     private String description;
 
-    @OneToMany(mappedBy = "parentDepartment", cascade = CascadeType.MERGE, orphanRemoval = true)
+    @OneToMany(mappedBy = "parentDepartment",
+        cascade = CascadeType.MERGE,
+        orphanRemoval = true)
     private Set<Department> departments = new HashSet<>();
 
     @ManyToOne

@@ -21,9 +21,9 @@ public abstract class DepartmentMapper {
 
     @Mapping(target = "parentDepartment", source = "parentDepartmentId")
     public abstract Department map(DepartmentCreateDTO data);
-
+    @Mapping(target = "parentDepartmentId", source = "parentDepartment.id")
     public abstract DepartmentDTO map(Department model);
-
+    @Mapping(target = "parentDepartment", source = "parentDepartmentId")
     public abstract Department map(DepartmentDTO data);
 
     @Mapping(target = "parentDepartment", source = "parentDepartmentId")
